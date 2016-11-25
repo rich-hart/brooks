@@ -16,8 +16,12 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework import routers
+from django.conf import settings
+from django.conf.urls.static import static
+
 from users.views import UserViewSet
 from groups.views import GroupViewSet
+from .views import home as home_view
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
@@ -25,6 +29,14 @@ router.register(r'groups', GroupViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', include(router.urls)),
+    url(r'^api/', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^$', home_view, name='home'),
 ]
+
+if settings.DEBUG:
+    urlpatterns = urlpatterns + static(
+        settings.STATIC_URL, 
+        document_root=settings.STATIC_ROOT,
+    )
+
