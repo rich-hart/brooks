@@ -1,0 +1,29 @@
+---
+- model: auth.User
+  pk: 0
+  fields:
+    username: admin
+    email: rich.hart@rice.edu
+    is_staff: True
+    is_superuser: True
+
+- model: auth.User
+  pk: 1
+  fields:
+    username: rich.hart
+    first_name: Richard 
+    last_name: Hart
+    email: rich.hart@rice.edu
+    is_staff: True
+    is_superuser: False
+
+- model: auth.User
+  pk: 2
+  fields:
+    username: michael.brooks
+    first_name: Michael
+    last_name: Brooks
+    email: michael.majority@gmail.com
+    is_staff: True
+    is_superuser: False
+

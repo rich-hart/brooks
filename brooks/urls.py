@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 
 from users.views import UserViewSet
 from groups.views import GroupViewSet
-from .views import home as home_view
+from brooks import views
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
@@ -31,7 +31,10 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^$', home_view, name='home'),
+    url(r'^$', views.base, name='base'),
+    url(r'^home', views.home, name='home'),
+    url(r'^about', views.about, name='about'),
+    url(r'^contact', views.contact, name='contact'),
 ]
 
 if settings.DEBUG:
