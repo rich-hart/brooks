@@ -5,27 +5,25 @@ from rest_framework.test import APITestCase
 from django.urls import reverse
 from urllib.parse import urljoin
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
-class TestPages(StaticLiveServerTestCase):
+class TestBasePage(StaticLiveServerTestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome()
-
-    def test_home_page(self):
-        import ipdb; ipdb.set_trace()
-        #url = reverse('home')
         url = urljoin(self.live_server_url,reverse('home'))
         self.driver = webdriver.Chrome()
         self.driver.get(url)
-        import time; time.sleep(4)
+
+    def test_nav(self):
+#        import ipdb; ipdb.set_trace()
+        self.driver.set_window_size(800,600)
+        topnav_elem = self.driver.find_element_by_id('topnav')
+        self.assertEqual(topnav_elem.text,'Home\nContact\nAbout')
+        self.driver.set_window_size(679,600)
+        self.assertEqual(topnav_elem.text,'Home\n☰')
+        topnav_elem_list = self.driver.find_element_by_id('topnav_list') 
+        topnav_elem_list.click()
+        self.assertEqual(topnav_elem.text,'Home\nContact\nAbout\n☰')
+
 
     def tearDown(self):
+#        import time; time.sleep(4)
         self.driver.close()
-       
-#assert "Python" in driver.title
-#elem = driver.find_element_by_name("q")
-#elem.clear()
-#elem.send_keys("pycon")
-#elem.send_keys(Keys.RETURN)
-#assert "No results found." not in driver.page_source
-#driver.close()
-
 
