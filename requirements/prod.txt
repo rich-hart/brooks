@@ -1,0 +1,2 @@
+-r base.text
+gunicorn==19.6.0
