@@ -9,5 +9,6 @@ class Profile(models.Model):
 #        unique=True,
     )
     about = models.TextField(max_length=1024)
+    image = models.URLField()
 #    picture
 

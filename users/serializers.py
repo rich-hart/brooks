@@ -9,6 +9,7 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
         model = Profile
         fields = (
            'about',
+           'image',
         )
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for podcast in podcasts %}
+        <li>{{ podcast.show }}</li>
+        <li>{{ podcast.episode }}</li>
+        <li>{{ podcast.title }}</li>
+        <li>{{ podcast.air_date }}</li>
+        <li>{{ podcast.description }}</li>
+        <li>{{ podcast.host }}</li>
+    {% endfor %}
+{% endblock %}

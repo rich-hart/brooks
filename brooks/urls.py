@@ -22,24 +22,36 @@ from django.conf.urls.static import static
 from users.views import UserViewSet
 from groups.views import GroupViewSet
 from brooks import views
-
+from podcasts.views import PodcastViewSet
+from shows.views import ShowViewSet
 router = routers.DefaultRouter()
+router.register(r'podcasts', PodcastViewSet)
 router.register(r'users', UserViewSet)
 router.register(r'groups', GroupViewSet)
+router.register(r'shows', ShowViewSet)
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^$', views.base, name='base'),
-    url(r'^home', views.home, name='home'),
+    url(r'^$', views.index, name='index'),
+#    url(r'^home', views.home, name='home'),
     url(r'^about', views.about, name='about'),
-    url(r'^contact', views.contact, name='contact'),
+    url(r'^shows', views.ShowList.as_view(), name='shows'),
+    url(r'^donate', views.donate, name= 'donate'),
+#    url(r'^contact', views.contact, name='contact'),
 ]
 
 if settings.DEBUG:
     urlpatterns = urlpatterns + static(
         settings.STATIC_URL, 
         document_root=settings.STATIC_ROOT,
+    )
+
+if settings.DEBUG:
+    urlpatterns = urlpatterns + static(
+        settings.MEDIA_URL, 
+        document_root=settings.MEDIA_ROOT,
     )
 
