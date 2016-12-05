@@ -5,7 +5,7 @@ from rest_framework import renderers
 from rest_framework.response import Response
 from rest_framework import generics
 from django.template.response import TemplateResponse
-
+from django.shortcuts import render
 class PodcastViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
