@@ -1,3 +1,22 @@
+#about{
+  padding: 20px 20px 20px 20px;
+  position: fixed;
+  left: 30%;
+  border: 2px solid black;
+  font: 2em Calibri;
+  width:500px;
+  height: 1000px;
+  word-wrap: break-word;
+
+}
+img{ 
+  float: left;
+  vertical-align: right;
+  margin: 7px 7px 7px 7px; 
+}
+div {
+    word-wrap: normal;
+}
 body {
 /*   background-image: url("/static/img/space.jpg");*/
 /*    background-size: 1440px 900px;*/

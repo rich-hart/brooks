@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'groups',
     'podcasts',
     'shows',
+    'videos',
 ]
 
 MIDDLEWARE = [

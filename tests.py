@@ -11,16 +11,16 @@ class TestBasePage(StaticLiveServerTestCase):
         self.driver = webdriver.Chrome()
         self.driver.get(url)
 
-    def test_nav(self):
+#    def test_nav(self):
 #        import ipdb; ipdb.set_trace()
-        self.driver.set_window_size(800,600)
-        topnav_elem = self.driver.find_element_by_id('topnav')
-        self.assertEqual(topnav_elem.text,'Home\nContact\nAbout')
-        self.driver.set_window_size(679,600)
-        self.assertEqual(topnav_elem.text,'Home\n☰')
-        topnav_elem_list = self.driver.find_element_by_id('topnav_list') 
-        topnav_elem_list.click()
-        self.assertEqual(topnav_elem.text,'Home\nContact\nAbout\n☰')
+#        self.driver.set_window_size(800,600)
+#        topnav_elem = self.driver.find_element_by_id('topnav')
+#        self.assertEqual(topnav_elem.text,'Home\nContact\nAbout')
+#        self.driver.set_window_size(679,600)
+#        self.assertEqual(topnav_elem.text,'Home\n☰')
+#        topnav_elem_list = self.driver.find_element_by_id('topnav_list') 
+#        topnav_elem_list.click()
+#        self.assertEqual(topnav_elem.text,'Home\nContact\nAbout\n☰')
 
 
     def tearDown(self):

@@ -26,4 +26,53 @@
     email: michael.majority@gmail.com
     is_staff: True
     is_superuser: False
+- model: users.Profile
+  pk: 1
+  fields:
+    owner: 2
+    about: "I'm the co host of 2 Dope Boys & a Podcast (named a top ten best business podcast by INC) and a contributor and Monday host of the four time award winning progressive political talk show The Majority Report. I've been a guest analyst on The Young Turks, Al Jazeera, CCTV and France 24. Written words for Al Monitor, the Washington Post and PSFK. I also do a lot of questionable impressions from \"Maost Bernie\" \"to Right Wing Mandela\".\nAs a strategist I've worked with brands and non-profits to create cultural insight and anthropologically grounded research. I studied at Middle East Technical University in Ankara Turkey and I have a BA from Bates College in international politics."
+    image: "https://static1.squarespace.com/static/56d508d1f850827e47694246/t/56de31171d07c0069b7aaad7/1457402205636/?format=1000w"
+- model: shows.Show
+  pk: 1
+  fields:
+    name: Two Dope Boys and a Podcast
+    home: "https://twodopeboyspod.com"
+    logo: "https://static1.squarespace.com/static/56d508d1f850827e47694246/t/56d5098259827ec2fa16ad94/1480565022910/?format=1500w"
 
+- model: shows.Show
+  pk: 2
+  fields:
+    name: MajorityFM
+    home: "http://majority.fm/report/"
+    logo: "http://majority.fm/wp-content/uploads/2015/09/MR+MajorityFM+LOGO+opaque+face+copy.jpg"
+
+- model: shows.Show
+  pk: 3
+  fields:
+    name: The Young Turks
+    home: "https://tytnetwork.com/"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/TYT_logo.svg/500px-TYT_logo.svg.png"
+
+- model: podcasts.Podcast
+  pk: 1
+  fields:
+    show: 1
+    title: "Oliver Kremer: Dos Toros, Bull in the Burrito Market"
+    air_date: 2016-12-01
+    host: "http://fans.fm/listen/261.mp3?token=c07369c0-99af-0134-7936-0f16ad195fd9"
+
+- model: podcasts.Podcast
+  pk: 2
+  fields:
+    show: 2
+    title: "Bill Fletcher, Jr.: The Future of the Left and Castro’s Legacy"
+    air_date: "2016-11-28"
+    host: "http://www.podtrac.com/pts/redirect.mp3/traffic.libsyn.com/majorityfm/11-28-16-Bill_Fletcher-PUB.mp3"
+
+- model: videos.Video
+  pk: 1
+  fields:
+    show: 3
+    title: "Louie Gohmert: Hillary Clinton Has Special Needs"
+    air_date: "2016-09-11"
+    host: "https://youtu.be/tm2Xn3NHd9M"

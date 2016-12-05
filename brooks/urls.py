@@ -22,22 +22,27 @@ from django.conf.urls.static import static
 from users.views import UserViewSet
 from groups.views import GroupViewSet
 from brooks import views
-from podcasts.views import PodcastViewSet
+from podcasts.views import PodcastViewSet, PodcastHighlight
 from shows.views import ShowViewSet
+from videos.views import VideoViewSet
+
 router = routers.DefaultRouter()
 router.register(r'podcasts', PodcastViewSet)
 router.register(r'users', UserViewSet)
 router.register(r'groups', GroupViewSet)
 router.register(r'shows', ShowViewSet)
+router.register(r'videos', VideoViewSet)
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include(router.urls)),
+    url(r'^api/podcasts/(?P<pk>[0-9]+)/highlight/$', PodcastHighlight.as_view(),name='podcast-highlight'),
+
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^$', views.index, name='index'),
 #    url(r'^home', views.home, name='home'),
-    url(r'^about', views.about, name='about'),
+    url(r'^profile', views.profile, name='profile'),
     url(r'^shows', views.ShowList.as_view(), name='shows'),
     url(r'^donate', views.donate, name= 'donate'),
 #    url(r'^contact', views.contact, name='contact'),
