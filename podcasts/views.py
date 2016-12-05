@@ -4,6 +4,7 @@ from .serializers import PodcastSerializer
 from rest_framework import renderers
 from rest_framework.response import Response
 from rest_framework import generics
+from django.template.response import TemplateResponse
 
 class PodcastViewSet(viewsets.ModelViewSet):
     """
@@ -19,4 +20,11 @@ class PodcastHighlight(generics.GenericAPIView):
 
     def get(self, request, *args, **kwargs):
         podcast = self.get_object()
-        return Response(template_name='templates/base.html')
+        #data =  {'first_name': 'John', 'last_name': 'Doe'}
+        data = {
+            'show': podcast.show.name,
+            'title': podcast.title,
+            'air_date': podcast.air_date,
+            'host': podcast.host, 
+        }
+        return TemplateResponse(request, 'podcast.html', data)

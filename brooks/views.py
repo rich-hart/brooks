@@ -15,13 +15,19 @@ class ShowList(APIView):
     template_name = 'shows.html'
 
     def get(self, request):
-        queryset = []
-        for show in Show.objects.all():
-            podcast = Podcast.objects.filter(show=show.pk).first()
-            if podcast:
-                podcast.show = show.name
-                queryset.append(podcast)
-        return Response({'shows': queryset})
+
+        queryset = Show.objects.all()
+        for show in queryset:
+            show.podcasts = show.podcast_set.all()
+            show.videos = show.video_set.all()
+        return Response({'shows':queryset})
+#        queryset = []
+#        for show in Show.objects.all():
+#            podcast = Podcast.objects.filter(show=show.pk).first()
+#            if podcast:
+#                podcast.show = show.name
+#                queryset.append(podcast)
+#        return Response({'shows': queryset})
 
 def index(request):
     return redirect('profile')

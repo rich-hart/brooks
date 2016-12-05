@@ -24,7 +24,7 @@ from groups.views import GroupViewSet
 from brooks import views
 from podcasts.views import PodcastViewSet, PodcastHighlight
 from shows.views import ShowViewSet
-from videos.views import VideoViewSet
+from videos.views import VideoViewSet, VideoHighlight
 
 router = routers.DefaultRouter()
 router.register(r'podcasts', PodcastViewSet)
@@ -38,6 +38,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include(router.urls)),
     url(r'^api/podcasts/(?P<pk>[0-9]+)/highlight/$', PodcastHighlight.as_view(),name='podcast-highlight'),
+    url(r'^api/videos/(?P<pk>[0-9]+)/highlight/$', VideoHighlight.as_view(),name='video-highlight'),
 
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^$', views.index, name='index'),
