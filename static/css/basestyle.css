@@ -1,3 +1,6 @@
+p {
+  font-size: 25px;
+}
 
 audio { 
   width: 400px; 
@@ -16,11 +19,11 @@ audio {
   word-wrap: break-word;
 
 }
-img{ 
+/*img{ 
   float: left;
   vertical-align: right;
   margin: 7px 7px 7px 7px; 
-}
+}*/
 div {
     word-wrap: normal;
 }

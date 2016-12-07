@@ -16,7 +16,7 @@ class UserTests(APITestCase):
             'email': 'u@d.com',
             'profile': {
                 'about': 'about',
-                'image': 'https://image.com',
+                'image': 'media/anonymous_profile.jpg',
             }
         }
 
@@ -37,7 +37,7 @@ class UserTests(APITestCase):
             'email': 'u@d.com',
             'profile': {
                 'about': 'about',
-                'image': 'https://image.com',
+                'image': 'media/anonymous_profile.jpg',
             }
         }
 
