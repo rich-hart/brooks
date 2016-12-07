@@ -31,7 +31,7 @@
   fields:
     owner: 2
     about: "I'm the co host of 2 Dope Boys & a Podcast (named a top ten best business podcast by INC) and a contributor and Monday host of the four time award winning progressive political talk show The Majority Report. I've been a guest analyst on The Young Turks, Al Jazeera, CCTV and France 24. Written words for Al Monitor, the Washington Post and PSFK. I also do a lot of questionable impressions from \"Maost Bernie\" \"to Right Wing Mandela\".\nAs a strategist I've worked with brands and non-profits to create cultural insight and anthropologically grounded research. I studied at Middle East Technical University in Ankara Turkey and I have a BA from Bates College in international politics."
-    image: "https://static1.squarespace.com/static/56d508d1f850827e47694246/t/56de31171d07c0069b7aaad7/1457402205636/?format=1000w"
+    image: "michael_brooks.jpg"
 - model: shows.Show
   pk: 1
   fields:
