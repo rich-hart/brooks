@@ -12,7 +12,9 @@
           <audio preload="auto" controls="controls" src="{{podcast.host}}"></audio>
         {% endfor %}
         {% for video in show.videos %}
-            <p><a href="api/videos/{{video.pk}}/highlight">{{ video.title }}</a></p>
+<h2>{{video.title}}</h2>
+<h3>{{video.air_date}}</h3>
+<iframe width="560" height="315" src="{{video.host}}" frameborder="0" allowfullscreen></iframe>
         {% endfor %} 
         </div>
         
