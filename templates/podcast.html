@@ -1,7 +1,12 @@
-<title>{{show}}</title>
-<h1>{{show}}</h1>
-<h2>{{title}}</h2>
-<h3>{{air_date}}</h3>
-<div><audio controls>
-    <source src="{{host}}" type="audio/mpeg">
-</audio></div>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/static/css/basestyle.css">
+    </head>
+    <body>
+        <title>{{show}}</title>
+        <h1>{{show}}</h1>
+        <h2>{{title}}</h2>
+        <h3>{{air_date}}</h3>
+        <audio preload="auto" controls="controls" src="{{host}}"></audio>
+    </body>
+</html>

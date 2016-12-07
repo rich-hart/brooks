@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div style="float: right; margin-top: 10px; background-color: #ff0000; width: 100px; height: 100px; margin: 10px;">
-        <img src={{image}} 
+    <div style="float: right; margin-top: 10px; background-color: #ff0000; width: 200px; height: 200px; margin: 10px;">
+        <img src="/media/{{image}}" 
              alt="Anonymous" 
-             width=100px 
-             height=100px>
+             width=200px 
+             height=200px>
     </div>
     {%for line in about_line_list%}
         <p>{{line}}</p>

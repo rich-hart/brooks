@@ -19,6 +19,7 @@ class PodcastHighlight(generics.GenericAPIView):
     renderer_classes = (renderers.StaticHTMLRenderer,)
 
     def get(self, request, *args, **kwargs):
+
         podcast = self.get_object()
         #data =  {'first_name': 'John', 'last_name': 'Doe'}
         data = {
