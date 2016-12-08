@@ -65,6 +65,16 @@ def podcasts(request):
 def donate(request):
     return render(request, 'donate.html')
 
-
+def example(request):
+#    import ipdb;ipdb.set_trace()
+    user = User.objects.filter(username=settings.WEBSITE_OWNER).first()
+    profile = Profile.objects.filter(owner=user).first()
+    shows = Show.objects.all()
+    for show in shows:
+        show.podcasts = show.podcast_set.all()
+        show.videos = show.video_set.all()
+    data = {'user':user,'profile':profile,'shows':shows}
+    return render(request, 'example.html',data)
+ 
 #def contact(request):
 #    return render(request, 'contact.html')

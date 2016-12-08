@@ -46,6 +46,7 @@ urlpatterns = [
     url(r'^profile', views.profile, name='profile'),
     url(r'^shows', views.ShowList.as_view(), name='shows'),
     url(r'^donate', views.donate, name= 'donate'),
+    url(r'^example', views.example, name='example'),
 #    url(r'^contact', views.contact, name='contact'),
 ]
 

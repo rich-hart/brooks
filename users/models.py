@@ -10,6 +10,7 @@ class Profile(models.Model):
         primary_key=True,
 #        unique=True,
     )
+    profession = models.CharField(max_length=255)
     about = models.TextField(max_length=1024)
     image = models.FileField(upload_to=settings.MEDIA_ROOT)
 #    picture
