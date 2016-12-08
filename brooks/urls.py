@@ -41,7 +41,7 @@ urlpatterns = [
     url(r'^api/videos/(?P<pk>[0-9]+)/highlight/$', VideoHighlight.as_view(),name='video-highlight'),
 
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.example, name='index'),
 #    url(r'^home', views.home, name='home'),
     url(r'^profile', views.profile, name='profile'),
     url(r'^shows', views.ShowList.as_view(), name='shows'),
