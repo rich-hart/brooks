@@ -30,7 +30,8 @@
   pk: 1
   fields:
     owner: 2
-    about: "I'm the co host of 2 Dope Boys & a Podcast (named a top ten best business podcast by INC) and a contributor and Monday host of the four time award winning progressive political talk show The Majority Report. I've been a guest analyst on The Young Turks, Al Jazeera, CCTV and France 24. Written words for Al Monitor, the Washington Post and PSFK. I also do a lot of questionable impressions from \"Maost Bernie\" \"to Right Wing Mandela\".\nAs a strategist I've worked with brands and non-profits to create cultural insight and anthropologically grounded research. I studied at Middle East Technical University in Ankara Turkey and I have a BA from Bates College in international politics."
+    about: "My 2 Dope Boys & a podcast co host Phil Mckenzie and I provide brand consulting services that are anchored in anthropologically perspectives and insight. Through strategic planning, brainstorming, group facilitation and events we work with brands to discover the patterns, values and cultures at play in their markets and communities.\nI also work as a political advisor for NGOs and campaigns working for large scale progressive change. Harnessing my skills as a content creator to helps you create better content, more compelling stories and faster organizing opportunities.\nI work with individuals and organizations who want to create podcasts and YouTube content. I advise on show planning, segment ideas and sometimes act as a host to help facilitate and professionalize your shows. 
+"
     image: "michael_brooks.jpg"
 - model: shows.Show
   pk: 1
