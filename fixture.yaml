@@ -37,7 +37,7 @@
 - model: shows.Show
   pk: 1
   fields:
-    name: Two Dope Boys and a Podcast
+    name: "Two Dope Boys & a Podcast"
     home: "https://twodopeboyspod.com"
     logo: "https://static1.squarespace.com/static/56d508d1f850827e47694246/t/56d5098259827ec2fa16ad94/1480565022910/?format=1500w"
 
