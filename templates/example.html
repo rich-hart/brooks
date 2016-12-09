@@ -70,15 +70,16 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
         <div class="panel">
         {% for podcast in show.podcasts %}
           <h4>{{podcast.title}}</h4>
-          <h5>{{podcast.air_date}}</h5>
+          <h5>{{podcast.air_date}}</h5> 
           <audio preload="auto" controls="controls" src="{{podcast.host}}" style="float: left;"></audio>
           <center><a href="{{podcast.host}}">Download</a></center>
-
+          <br/>
         {% endfor %}
         {% for video in show.videos %}
           <h4>{{video.title}}</h4>
           <h5>{{video.air_date}}</h5>
           <iframe width="373" height="210" src="{{video.host}}" frameborder="0" allowfullscreen></iframe>
+          <br/>
         {% endfor %} 
         </div>
         
