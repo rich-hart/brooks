@@ -71,7 +71,9 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
         {% for podcast in show.podcasts %}
           <h4>{{podcast.title}}</h4>
           <h5>{{podcast.air_date}}</h5>
-          <audio preload="auto" controls="controls" src="{{podcast.host}}"></audio>
+          <audio preload="auto" controls="controls" src="{{podcast.host}}" style="float: left;"></audio>
+          <center><a href="{{podcast.host}}">Download</a></center>
+
         {% endfor %}
         {% for video in show.videos %}
           <h4>{{video.title}}</h4>
@@ -139,7 +141,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
   <!-- Contact Section -->
   <div class="w3-padding-32 w3-content w3-text-grey" id="contact" style="margin-bottom:64px">
-    <h2>Contact Me</h2>
+    <h2>Contact</h2>
     <hr class="w3-opacity">
 
     <div class="w3-section">
