@@ -1,8 +1,19 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
 
-from .models import Profile
+from .models import Profile, Testimonial
 
+
+class TestimonialSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Testimonial
+        fields = (
+           'id',
+           'owner',
+           'recipient',
+           'quote', 
+        )
+        read_only_fields = ('owner',)
 
 class ProfileSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -10,7 +21,14 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
         fields = (
            'about',
            'image',
+           'facebook',
+           'instagram',
+           'snapchat',
+           'pinterest',
+           'twitter',
+           'linkedin',
         )
+
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     profile = ProfileSerializer()
@@ -32,7 +50,6 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         return user
 
     def update(self, user,validated_data, *args):
-
         profile_data = validated_data.pop('profile')
         user_data = validated_data
         user.first_name = user_data['first_name']

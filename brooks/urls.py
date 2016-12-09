@@ -19,7 +19,7 @@ from rest_framework import routers
 from django.conf import settings
 from django.conf.urls.static import static
 
-from users.views import UserViewSet
+from users.views import UserViewSet, TestimonialViewSet 
 from groups.views import GroupViewSet
 from brooks import views
 from podcasts.views import PodcastViewSet, PodcastHighlight
@@ -32,6 +32,7 @@ router.register(r'users', UserViewSet)
 router.register(r'groups', GroupViewSet)
 router.register(r'shows', ShowViewSet)
 router.register(r'videos', VideoViewSet)
+router.register(r'testimonials', TestimonialViewSet)
 
 
 urlpatterns = [

@@ -1,0 +1,8 @@
+---
+- model: users.Testimonial
+  pk: 1
+  fields:
+    owner: 1
+    recipient: 2
+    quote: "He's alright" 
+

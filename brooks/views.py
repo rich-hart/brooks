@@ -8,7 +8,7 @@ from rest_framework.views import APIView
 from django.db.models import Max
 from django.contrib.auth.models import User
 from django.conf import settings
-from users.models import Profile
+from users.models import Profile, Testimonial 
 import re
 class ShowList(APIView):
     renderer_classes = [TemplateHTMLRenderer]
@@ -66,14 +66,27 @@ def donate(request):
     return render(request, 'donate.html')
 
 def example(request):
-#    import ipdb;ipdb.set_trace()
     user = User.objects.filter(username=settings.WEBSITE_OWNER).first()
     profile = Profile.objects.filter(owner=user).first()
+    testimonials = Testimonial.objects.filter(recipient=user)
+    for testimonial in testimonials:
+        testimonial.owner_profile = Profile.objects.filter(owner=testimonial.owner).first()
+        testimonial.image = testimonial.owner_profile.image
+        testimonial.profession = testimonial.owner_profile.profession
+        testimonial.first_name = testimonial.owner.first_name
+        testimonial.last_name = testimonial.owner.last_name 
     shows = Show.objects.all()
+    venmo_account = settings.VENMO_ACCOUNT
     for show in shows:
         show.podcasts = show.podcast_set.all()
         show.videos = show.video_set.all()
-    data = {'user':user,'profile':profile,'shows':shows}
+    data = {
+        'user': user,
+        'profile': profile,
+        'testimonials': testimonials,
+        'shows': shows,
+        'venmo_account': venmo_account,
+    }
     return render(request, 'example.html',data)
  
 #def contact(request):
