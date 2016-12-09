@@ -10,6 +10,8 @@ from django.contrib.auth.models import User
 from django.conf import settings
 from users.models import Profile, Testimonial 
 import re
+from django.http import HttpResponse
+from django.core.mail import send_mail
 class ShowList(APIView):
     renderer_classes = [TemplateHTMLRenderer]
     template_name = 'shows.html'
@@ -45,6 +47,7 @@ class ProfileInstance(APIView):
 #        return Response({'profile': queryset.pop()})
         queryset = Profile.objects.all()
         return Response({'profiles':[]})
+
 def profile(request):
 #    import ipdb; ipdb.set_trace()
     site_owner = User.objects.filter(username=settings.WEBSITE_OWNER)
@@ -64,6 +67,16 @@ def podcasts(request):
 
 def donate(request):
     return render(request, 'donate.html')
+
+def message(request):
+    user = User.objects.filter(username=settings.WEBSITE_OWNER).first()
+    recipient_list = [user.email]
+    name = request.POST.get('Name', '') 
+    from_email = request.POST.get('Email', '')
+    subject = request.POST.get('Subject', '')
+    message = request.POST.get('Message', '')
+    send_mail(subject, message, from_email, recipient_list)
+    return HttpResponse("Sent")
 
 def example(request):
     user = User.objects.filter(username=settings.WEBSITE_OWNER).first()

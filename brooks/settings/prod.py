@@ -9,6 +9,8 @@ ALLOWED_HOSTS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR,'static') 
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 try:
     from .local import *
 except ImportError:

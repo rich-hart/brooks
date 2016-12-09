@@ -138,3 +138,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 WEBSITE_OWNER = 'michael.brooks'
 
 VENMO_ACCOUNT = 'rich-hart'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+

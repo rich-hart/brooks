@@ -25,6 +25,7 @@ from brooks import views
 from podcasts.views import PodcastViewSet, PodcastHighlight
 from shows.views import ShowViewSet
 from videos.views import VideoViewSet, VideoHighlight
+from django.core.mail import send_mail
 
 router = routers.DefaultRouter()
 router.register(r'podcasts', PodcastViewSet)
@@ -48,6 +49,7 @@ urlpatterns = [
     url(r'^shows', views.ShowList.as_view(), name='shows'),
     url(r'^donate', views.donate, name= 'donate'),
     url(r'^example', views.example, name='example'),
+    url(r'^message',views.message,name='message'),
 #    url(r'^contact', views.contact, name='contact'),
 ]
 
