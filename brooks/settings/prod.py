@@ -5,6 +5,7 @@ ALLOWED_HOSTS = [
     '0.0.0.0',
     'localhost',
     'michaelbrooks.herokuapp.com',
+    'www.kardashevweb.com',
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR,'static') 

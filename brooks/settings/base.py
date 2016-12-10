@@ -139,5 +139,7 @@ WEBSITE_OWNER = 'michael.brooks'
 
 VENMO_ACCOUNT = 'rich-hart'
 
+#FIXME: maybe switch email server with message api endpoint
+# for temp solution
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
