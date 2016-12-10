@@ -137,8 +137,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 WEBSITE_OWNER = 'michael.brooks'
 
-VENMO_ACCOUNT = 'rich-hart'
-
+DONATION_LINK = "https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ZNYCY6F6SYVVL&lc=US&item_name=Michael%20Brooks&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted" 
 #FIXME: maybe switch email server with message api endpoint
 # for temp solution
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

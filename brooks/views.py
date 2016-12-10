@@ -89,7 +89,6 @@ def example(request):
         testimonial.first_name = testimonial.owner.first_name
         testimonial.last_name = testimonial.owner.last_name 
     shows = Show.objects.all()
-    venmo_account = settings.VENMO_ACCOUNT
     for show in shows:
         show.podcasts = show.podcast_set.all()
         show.videos = show.video_set.all()
@@ -98,7 +97,7 @@ def example(request):
         'profile': profile,
         'testimonials': testimonials,
         'shows': shows,
-        'venmo_account': venmo_account,
+        'donation_link': settings.DONATION_LINK,
     }
     return render(request, 'example.html',data)
  
