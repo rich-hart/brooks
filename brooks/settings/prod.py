@@ -10,6 +10,12 @@ ALLOWED_HOSTS = [
     'www.kardashevweb.com',
 ]
 
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+
 try:
     from .local import *
 except ImportError:
