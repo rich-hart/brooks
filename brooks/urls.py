@@ -37,20 +37,16 @@ router.register(r'testimonials', TestimonialViewSet)
 
 
 urlpatterns = [
+    url(r'^$', views.example, name='index'),
+]
+
+if settings.DEBUG:
+   urlpatters = urlpatterns + [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include(router.urls)),
     url(r'^api/podcasts/(?P<pk>[0-9]+)/highlight/$', PodcastHighlight.as_view(),name='podcast-highlight'),
     url(r'^api/videos/(?P<pk>[0-9]+)/highlight/$', VideoHighlight.as_view(),name='video-highlight'),
-
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^$', views.example, name='index'),
-#    url(r'^home', views.home, name='home'),
-    url(r'^profile', views.profile, name='profile'),
-    url(r'^shows', views.ShowList.as_view(), name='shows'),
-    url(r'^donate', views.donate, name= 'donate'),
-    url(r'^example', views.example, name='example'),
-    url(r'^message',views.message,name='message'),
-#    url(r'^contact', views.contact, name='contact'),
 ]
 
 if settings.DEBUG:
