@@ -28,10 +28,26 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <a href="javascript:void(0)" onclick="closeNav()" class="w3-closenav w3-xxxlarge w3-display-topright" style="padding:0 12px;">
     <i class="fa fa-remove"></i>
   </a>
-  <a href="#" class="w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
-  <a href="#portfolio" class="w3-text-grey w3-hover-black" onclick="closeNav()">Portfolio</a>
-  <a href="#about" class="w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
-  <a href="#contact" class="w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+
+  <a href="#" 
+     class="w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+  <a href="#about" 
+     class="w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+  <a href="#2_dope_boys" 
+     class="w3-text-grey w3-hover-black" onclick="closeNav()">2 Dope Boys</a>
+  <a href="#majorityfm" 
+     class="w3-text-grey w3-hover-black" onclick="closeNav()">MajorityFM</a>
+  <a href="#strategy" 
+     class="w3-text-grey w3-hover-black" onclick="closeNav()">Strategy</a>
+  <a href="#media" 
+     class="w3-text-grey w3-hover-black" onclick="closeNav()">Media</a>
+  <a href="#blog" 
+     class="w3-text-grey w3-hover-black" onclick="closeNav()">Blog</a>
+  <a href="#contact" 
+     class="w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+  <a href="#support" 
+     class="w3-text-grey w3-hover-black" onclick="closeNav()">Support</a>
+
 </nav>
 
 <!-- Page Content -->
@@ -48,92 +64,80 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <img src="media/{{profile.image}}" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
   </header>
 
-  <!-- Portfolio Section -->
-
-  <div class="w3-padding-32 w3-content" id="portfolio">
-    <h2 class="w3-text-grey">Portfolio</h2>
-    <hr class="w3-opacity">
-    <link rel="stylesheet" type="text/css" href="static/css/accordion.css">
-    {% for show in shows %}
-
-        <button class="accordion">
-        <div style="float: right; margin-top: 10px; width: 50px; height: 50px; margin: 2px;">
-          <a href="{{show.home}}" target="_blank"><img src="{{show.logo}}"
-               width=50px
-               height=50px></a>
-        </div><h3><center style="float: left;">{{show.name}}</center></h3>
-        </button>
-
-        <div class="panel">
-        {% for podcast in show.podcasts %}
-          <h4>{{podcast.title}}</h4>
-          <h5>{{podcast.air_date}}</h5> 
-          <audio preload="auto" controls="controls" src="{{podcast.host}}" style="float: left;"></audio>
-          <center><a href="{{podcast.host}}">Download</a></center>
-          <br/>
-        {% endfor %}
-        {% for video in show.videos %}
-          <h4>{{video.title}}</h4>
-          <h5>{{video.air_date}}</h5>
-          <iframe width="373" height="210" src="{{video.host}}" frameborder="0" allowfullscreen></iframe>
-          <br/>
-        {% endfor %} 
-        </div>
-        
-    {% endfor %}
-    <script src="static/js/accordion.js" type="text/javascript"></script>
-
-
-  <!-- End Portfolio Section -->
-  </div>
 
   <!-- About Section -->
   <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
     <h2>About</h2>
     <hr class="w3-opacity">
-    <p>{{profile.about}}</p>
-    {% if testimonials %}
-      <!-- Testimonials -->
-      <h3 class="w3-padding-24">Testimonials</h3>
-
-      {% for testimonial in testimonials %}
-        {% if testimonial.image %}
-          <img src="/media/{{testimonial.image}}" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-        {% endif %}
-        <p><span class="w3-large w3-text-black w3-margin-right">{{testimonial.first_name}} {{testimonial.last_name}}</span>{{testimonial.owner_profile.profession}}</p>
-        <p>{{testimonial.quote}}</p><br>
-      {% endfor %}
-    {% endif %}
-
-   
+    <p>I'm the co-host of <a href="twodopeboyspod.com">2 Dope Boys & a Podcast</a> (named a top ten best business podcast by INC) and a contributor and Monday host of the four-time award-winning progressive political talk show The Majority Report. I've been a guest analyst on <a href="https://www.youtube.com/watch?v=SS3szAeJ8Tg&t=778s">The Young Turks</a>, Al Jazeera, <a href="https://www.youtube.com/watch?v=boNOGwJboUE&t=32s">CCTV</a> and France 24. Written words for Al Monitor, the Washington Post and PSFK. I also do a lot of questionable impressions from <a href="https://www.youtube.com/watch?v=ZWyzGtv5jSQ">"Maost Bernie"</a> "to Right Wing Mandela".</p>
+    <p>As a strategist, I've worked with brands and non-profits to create cultural insight and anthropologically grounded research. I studied at Middle East Technical University in Ankara Turkey and I have a BA from Bates College in international politics.</p> 
   <!-- End About Section -->
   </div>
+
+  <!-- 2 Dope Boys Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="2_dope_boys">
+    <h2>2 Dope Boys</h2>
+    <hr class="w3-opacity">
+    <p><a href="http://www.twodopeboyspod.com/">2 Dope Boys & a Podcast</a> is a twice weekly trend, research and insight show co-hosted by Michael Brooks and Phil Mckenzie. It's an entertaining, irreverent and smart look at race, economics and how to build a smarter, fairer and more interesting future. <a href="https://itunes.apple.com/us/podcast/2-dope-boys-a-podcast/id1091130274?mt=2">Subscribe here!</a> Or check us out on <a href="http://stitcher.com/podcast/2-dope-boys-and-a-podcast">Stitcher!</a></p>
+  <!-- 2 Dope Boys Section -->
+  </div>
+
+  <!-- MajorityFM Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="majorityfm">
+    <h2>MajorityFM</h2>
+    <hr class="w3-opacity">
+    <p>You can hear me five days a week and in the captain's chair on the four-time award-winning <a href="http://majority.fm/report/">Majority Report</a>. We are independent and left wing. Check out some of my work for MR: <a href="https://www.youtube.com/watch?v=RoU5Xe0z8n4&t=337s">here</a> and <a href="https://www.youtube.com/watch?v=IdY17jSiXlI&t=14s">here</a>.</p>
+  <!-- End MajorityFM Section -->
+  </div>
+
+
+  <!-- Strategy Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="strategy">
+    <h2>Strategy</h2>
+    <hr class="w3-opacity">
+    <ol>
+      <li>My 2 Dope Boys & a podcast co-host Phil Mckenzie and I provide <a href="http://www.twodopeboyspod.com/consulting/">brand consulting</a> services that are anchored in anthropologically perspectives and insight. Through strategic planning, brainstorming, group facilitation and events we work with brands to discover the patterns, values, and cultures at play in their markets and communities.</li>
+      <li>I also work as a political advisor for NGOs and campaigns working for large-scale progressive change. Harnessing my skills as a content creator to helps you create better content, more compelling stories, and faster organizing opportunities.</li>
+      <li>I work with individuals and organizations who want to create podcasts and YouTube content. I advise on show planning, segment ideas and sometimes act as a host to help facilitate and professionalize your shows.</li>
+    </ol>
+  <!-- End Strategy Section -->
+  </div>
+
+
+  <!-- Media Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="media">
+    <h2>Media</h2>
+    <hr class="w3-opacity">
+  <!-- End Media Section -->
+  </div>
+
+  <!-- Blog Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="blog">
+    <h2>Blog</h2>
+    <hr class="w3-opacity">
+  <!-- End Blog Section -->
+  </div>
+
   <!-- Contact Section -->
-  <div class="w3-padding-32 w3-content w3-text-grey" id="contact" style="margin-bottom:64px">
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="contact">
     <h2>Contact</h2>
     <hr class="w3-opacity">
-
-  
-    <p>Lets get in touch. Send me a message:</p>
-    <form action="/message" method="post" target="_blank">
-      {% csrf_token %}
-      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email"></p>
-      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Subject" required name="Subject"></p>
-      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message" required name="Message"></p>
-      <p>
-        <button class="w3-btn w3-light-grey w3-padding-large" type="submit">
-          <i class="fa fa-paper-plane"></i> SEND MESSAGE
-        </button>
-      </p>
-    </form>
+    <p>You can reach me through email or over Any of my social feeds to book for appearances. I also give keynotes and participate in panels, contact more for more information.</p>
   <!-- End Contact Section -->
-
   </div>  
+
+  <!-- Support Section -->
+  <div class="w3-padding-32 w3-content w3-text-grey" id="support" style="margin-bottom:64px">
+    <h2>Support</h2>
+    <hr class="w3-opacity">
+    <p>You can support me doing my work <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ZNYCY6F6SYVVL&lc=US&item_name=Michael%20Brooks&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted">here</a>. Any and all donations help support the work and the process. Thank you so much!</p>
+  <!-- End Support Section -->
+  </div>
+
+
 
   <!-- Footer -->
   <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
-    <h3 class="w3-padding-2"><a href="{{donation_link}}" style="text-decoration: none;">Donate</a></h3>
     {% if profile.facebook %}
       <a href="{{profile.facebook}}" target="_blank"><i class="fa fa-facebook-official w3-hover-text-indigo"></i></a>
     {% endif %}
