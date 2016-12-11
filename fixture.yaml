@@ -38,7 +38,7 @@
     linkedin: "https://www.linkedin.com/in/michael-brooks-911a9225"
     twitter: "https://twitter.com/_michaelbrooks"
     facebook: "https://www.facebook.com/michael.brooks.3158"
-
+    instagram: "https://www.instagram.com/michaeljamalbrooks/?hl=en"
 - model: users.Profile
   pk: 2
   fields:
