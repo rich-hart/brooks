@@ -8,6 +8,7 @@ ALLOWED_HOSTS = [
     'localhost',
     'michaelbrooks.herokuapp.com',
     'www.kardashevweb.com',
+    'www.michaeljamalbrooks.com',
 ]
 
 # Simplified static file serving.
