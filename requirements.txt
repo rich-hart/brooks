@@ -1,1 +1,6 @@
--r requirements/prod.txt
+markdown==2.6.7
+django==1.10.3
+selenium==3.0.1
+PyYAML==3.12
+gunicorn==19.6.0
+whitenoise==3.2.2
