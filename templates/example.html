@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>{{user.first_name}} {{user.last_name}}</title>
+<title>Michael Brooks</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="static/css/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
@@ -12,7 +12,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('static/{{profile.image}}');
+    background-image: url('static/michael_brooks.jpg');
     min-height: 100%;
 }
 </style>
@@ -54,10 +54,10 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
   <!-- Header -->
   <header class="w3-container w3-padding-128 w3-center" id="home">
-    <h1 class="w3-jumbo"><b>{{user.first_name}} {{user.last_name}}</b></h1>
-    <p>{{profile.profession}}</p>
-    <img src="static/{{profile.image}}" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
-    <img src="static/{{profile.image}}" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
+    <h1 class="w3-jumbo"><b>Michael Brooks</b></h1>
+    <p>Political Analyst & Strategist</p>
+    <img src="static/michael_brooks.jpg" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
+    <img src="static/michael_brooks.jpg" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
   </header>
 
 
@@ -109,31 +109,16 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <!-- End Contact Section -->
     <div class="w3-container w3-center w3-xlarge" id="social">
     
-      <a href="mailto:{{user.email}}" target="_blank"><i class="fa fa-envelope fa-fw w3-xxlarge w3-hover-text-red"></i></a>
-    {% comment %}
-    {% if profile.facebook %}
-      <a href="{{profile.facebook}}" target="_blank"><i class="fa fa-facebook-official fa-fw w3-xxlarge w3-hover-text-indigo"></i></a>
-    {% endif %}
-    {% endcomment %}
-    {% if profile.instagram %}
-      <a href="{{profile.instagram}}" target="_blank"><i class="fa fa-instagram fa-fw w3-xxlarge w3-hover-text-purple"></i></a>
-    {% endif %}
+      <a href="mailto:michael.majority@gmail.com" target="_blank"><i class="fa fa-envelope fa-fw w3-xxlarge w3-hover-text-red"></i></a>
+      <a href="https://www.facebook.com/michael.brooks.3158" target="_blank"><i class="fa fa-facebook-official fa-fw w3-xxlarge w3-hover-text-indigo"></i></a>
 
-    {% if profile.snapchat %}
-      <a href="{{profile.snapchat}}" target="_blank"><i class="fa fa-snapchat fa-fw w3-xxlarge w3-hover-text-yellow"></i></a>
-    {% endif %}
+      <a href="https://www.instagram.com/michaeljamalbrooks/?hl=en" target="_blank"><i class="fa fa-instagram fa-fw w3-xxlarge w3-hover-text-purple"></i></a>
 
-    {% if profile.pinterest %}
-      <a href="{{profile.pinterest}}" target="_blank"><i class="fa fa-pinterest-p fa-fw w3-xxlarge w3-hover-text-red"></i></a>
-    {% endif %}
 
-    {% if profile.twitter %}
-      <a href="{{profile.twitter}}" target="_blank"><i class="fa fa-twitter fa-fw w3-xxlarge w3-hover-text-light-blue"></i></a>
-    {% endif %}
 
-    {% if profile.linkedin %}
-      <a href="{{profile.linkedin}}" target="_blank"><i class="fa fa-linkedin fa-fw w3-xxlarge w3-hover-text-indigo"></i></a>
-    {% endif %}
+      <a href="https://twitter.com/_michaelbrooks" target="_blank"><i class="fa fa-twitter fa-fw w3-xxlarge w3-hover-text-light-blue"></i></a>
+
+      <a href="https://www.linkedin.com/in/michael-brooks-911a9225" target="_blank"><i class="fa fa-linkedin fa-fw w3-xxlarge w3-hover-text-indigo"></i></a>
     </div>
 
   </div>  
