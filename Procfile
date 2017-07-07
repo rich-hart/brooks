@@ -1,1 +1,1 @@
-web: gunicorn brooks.wsgi --settings brooks.settings.prod --log-file -
+web: gunicorn brooks.wsgi --settings brooks.settings --log-file -
