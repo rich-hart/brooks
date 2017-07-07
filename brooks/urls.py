@@ -13,41 +13,18 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
-from django.contrib import admin
-from rest_framework import routers
+from django.conf.urls import url
 from django.conf import settings
 from django.conf.urls.static import static
 
-from users.views import UserViewSet, TestimonialViewSet 
-from groups.views import GroupViewSet
 from brooks import views
-from podcasts.views import PodcastViewSet, PodcastHighlight
-from shows.views import ShowViewSet
-from videos.views import VideoViewSet, VideoHighlight
-from django.core.mail import send_mail
 
-router = routers.DefaultRouter()
-router.register(r'podcasts', PodcastViewSet)
-router.register(r'users', UserViewSet)
-router.register(r'groups', GroupViewSet)
-router.register(r'shows', ShowViewSet)
-router.register(r'videos', VideoViewSet)
-router.register(r'testimonials', TestimonialViewSet)
 
 
 urlpatterns = [
     url(r'^$', views.example, name='index'),
 ]
 
-if settings.DEBUG:
-   urlpatters = urlpatterns + [
-    url(r'^admin/', admin.site.urls),
-    url(r'^api/', include(router.urls)),
-    url(r'^api/podcasts/(?P<pk>[0-9]+)/highlight/$', PodcastHighlight.as_view(),name='podcast-highlight'),
-    url(r'^api/videos/(?P<pk>[0-9]+)/highlight/$', VideoHighlight.as_view(),name='video-highlight'),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-]
 
 if settings.DEBUG:
     urlpatterns = urlpatterns + static(
