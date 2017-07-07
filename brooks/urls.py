@@ -18,9 +18,19 @@ from django.contrib import admin
 from django.shortcuts import render
 from django.conf.urls.static import static
 from django.conf import settings
-
+import yaml
+import os 
 def home(request):
-    return render(request, 'home.html', {})
+    episode_path = os.path.join(settings.BASE_DIR, 'episode.yaml') 
+    try:
+        with open(episode_path, 'r') as stream:
+            episode = yaml.load(stream)
+    except yaml.YAMLError as exc:
+        episode = {}
+    except FileNotFoundError:
+        episode = {}
+    finally:
+        return render(request, 'home.html', episode)
 
 urlpatterns = [
     url(r'^$', home),

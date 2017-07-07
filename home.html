@@ -31,6 +31,10 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
   <a href="#" 
      class="w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+{% if podcast %}
+  <a href="#about" 
+     class="w3-text-grey w3-hover-black" onclick="closeNav()">Latest</a>
+{% endif %}
   <a href="#about" 
      class="w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
   <a href="#2_dope_boys" 
@@ -60,6 +64,23 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <img src="static/michael_brooks.jpg" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
   </header>
 
+{% if podcast %}
+  <!-- Latest Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
+    <h2>Latest</h2>
+    <hr class="w3-opacity">
+    <h3>{{podcast}}</h3>
+    <h4>{{pubDate}}</h4>
+
+    <audio preload="auto" controls="controls" src="{{link}}" style="float: left;"></audio>
+
+    <br/>
+    <br/>
+
+    <p>{{description}}</p> 
+  <!-- End About Section -->
+  </div>
+{% endif %}
 
   <!-- About Section -->
   <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
