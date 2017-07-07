@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 def home(request):
-    return render(request, 'example.html', {})
+    return render(request, 'home.html', {})
 
 urlpatterns = [
     url(r'^$', home),
